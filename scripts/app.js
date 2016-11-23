@@ -2,7 +2,7 @@
 // empty array
 angular.module("tasksListApp", [])
 
-.controller('mainCtrl', function ($scope) {
+.controller('MainController', function ($scope) {
 
    $scope.helloWorld = function () {
         console.log("Hello controller");

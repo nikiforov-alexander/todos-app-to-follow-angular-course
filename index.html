@@ -17,9 +17,15 @@
      -->
     <div ng-controller="MainController" class="list">
 
+        <!--
+        The ng-class directive applied 'editing-item' class
+        to our "div" if, condition is true, i.e. when
+        editing == true
+        -->
         <div ng-repeat="task in tasks"
+             ng-class="{'editing-item': editing == true}"
              class="item">
-            <!--
+             <!--
              By adding ng-model here, we can save in $scope
              variable "task", and use it later on.
              If we use "task.name", then we'll have "task"

@@ -39,10 +39,15 @@
             </label>
 
             <!--
-            input is shown when "editing = true"
+            1. input is shown when "editing = true"
+            2. ng-blur sets editing to false, when
+            we click somewhere outside input, and
+            after that input becomes inactive, while
+            label with ng-show becomes active
             -->
             <input ng-model="task.name"
                    ng-show="editing == true"
+                   ng-blur="editing = false"
                    id="task-name-input"
                    type="text"
                    class="editing-label">

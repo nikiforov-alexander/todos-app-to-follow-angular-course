@@ -18,12 +18,15 @@
     <div ng-controller="MainController" class="list">
 
         <!--
-        The ng-class directive applied 'editing-item' class
-        to our "div" if, condition is true, i.e. when
-        editing == true
+        1. The ng-class directive applied 'editing-item' class
+          to our "div" if, condition is true, i.e. when
+          editing == true.
+          This div class will be set to "edited", when
+          "task.edited" is true, i.e. when we edited any of our
+          tasks
         -->
         <div ng-repeat="task in tasks"
-             ng-class="{'editing-item': editing == true}"
+             ng-class="{'editing-item': editing == true, 'edited': task.edited == true}"
              class="item">
              <!--
              By adding ng-model here, we can save in $scope
@@ -48,11 +51,16 @@
             <!--
             1. input is shown when "editing = true"
             2. ng-blur sets editing to false, when
-            we click somewhere outside input, and
-            after that input becomes inactive, while
-            label with ng-show becomes active
+              we click somewhere outside input, and
+              after that input becomes inactive, while
+              label with ng-show becomes active
+            3. "ng-change" will fire when input changes,
+              setting "task.edited" to "true", so that
+              we change our CSS class in "div" above
+              and show "edited" near our Task.
             -->
             <input ng-model="task.name"
+                   ng-change="task.edited = true"
                    ng-show="editing == true"
                    ng-blur="editing = false"
                    id="task-name-input"

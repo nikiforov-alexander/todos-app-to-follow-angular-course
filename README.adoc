@@ -1,0 +1,35 @@
+= My Tasks AngularJS App to follow course
+:experimental:
+:source-highlighter: coderay
+:toc:
+:toclevels: 5
+:toc-placement: preamble
+:sectnums:
+:index_html: link:index.html[index.html]
+:app_js: link:./scripts/app.js[app.js]
+:vendor: link:./vendor
+:angular_js: {vendor}/angular.js[angular.js]
+
+toc::[]
+
+== Description
+
+This is a simple Angular App to follow
+https://teamtreehouse.com/library/angular-basics[Treehouse Angular Basics Course].
+
+I tried my best to describe everything I do in comments, and every step
+in course I watch I try to find solutions for problems myself,
+and then watch how Huston does it.
+
+For now there is only one {app_js} with `MainController`.
+
+There is only one {index_html} file and nothing else.
+
+No package manager is used to properly use Angular, so
+{angular_js} file is simply in {vendor}[vendor] directory.
+
+This app at some point switched to 
+https://github.com/nikiforov-alexander/rest-with-angular-following-course[My Spark/Angular repository].
+
+There I connect simple CRUD operations to actual calls
+to REST API service.
